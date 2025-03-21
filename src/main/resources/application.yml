@@ -1,0 +1,10 @@
+spring:
+    profiles:
+        active: local
+    application:
+        name: Traceability's Microservice
+
+app:
+    name: Traceability's Microservice
+    version: 0.0.1
+    description: Microservice to save and show order logs

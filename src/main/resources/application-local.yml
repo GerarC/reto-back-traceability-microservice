@@ -1,0 +1,37 @@
+spring:
+    mvc:
+        log-request-details: true
+
+    data:
+        mongodb:
+            port: ${MONGO_PORT:27017}
+            host: ${MONGO_SERVICE_HOST:localhost}
+            username: ${MONGO_USERNAME:root}
+            password: ${MONGO_PASSWORD:password}
+            database: ${MONGO_DATABASE_NAME:mall_traceability}
+            authentication-database: ${MONGO_AUTH_DATABASE:admin}
+
+            repositories:
+                type: auto
+            auto-index-creation: true
+
+logging:
+    level:
+        web: trace
+        org:
+            springframework:
+                security: debug
+                web: trace
+
+server:
+    servlet:
+        context-path: ${APP_PATH:/mall}
+    port: 8096
+
+mall:
+    user:
+        base-url: localhost:8099/mall/v1
+
+allowed-origins:
+    http://localhost:3000/,
+    *,

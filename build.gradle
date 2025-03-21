@@ -1,5 +1,6 @@
 plugins {
 	id 'java'
+	id 'jacoco'
 	id 'org.springframework.boot' version '3.4.3'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
@@ -28,16 +29,34 @@ ext {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	// Annotations
+	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor group: 'org.mapstruct', name: 'mapstruct-processor', version: '1.6.3'
+
+	implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.6.3'
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.8.5'
+
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '3.4.3'
+	implementation 'com.h2database:h2'
+
+	// Feign
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '4.2.0'
+	implementation group: 'io.github.openfeign', name: 'feign-hc5', version: '13.5'
+
+	//DB
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+
+	// Developer
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	annotationProcessor 'org.projectlombok:lombok'
+
+	// Test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'com.h2database:h2'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
@@ -48,6 +67,38 @@ dependencyManagement {
 	}
 }
 
-tasks.named('test') {
+
+def jacocoExclude = [
+		'**/dto/.*',
+		'**/spi/.*',
+		'**/api/.*',
+		'**/mappers/.*',
+		'**/repository/.*',
+		'**/*.test',
+		'**/generated/.*',
+		"**/model/**/.*",
+		"**/application/**/.*",
+		"**/infrastructure/**/.*",
+]
+
+test {
 	useJUnitPlatform()
+	finalizedBy jacocoTestReport
+}
+
+jacoco {
+	toolVersion = "0.8.12"
+}
+
+
+jacocoTestReport {
+	reports {
+		xml.required = true
+		html.required = true
+	}
+	afterEvaluate {
+		classDirectories.setFrom(files(classDirectories.files.collect {
+			fileTree(dir: it, exclude: jacocoExclude)
+		}))
+	}
 }
