@@ -6,7 +6,7 @@ import co.com.pragma.backend_challenge.traceability.application.handler.OrderLog
 import co.com.pragma.backend_challenge.traceability.application.mapper.request.OrderLogRequestMapper;
 import co.com.pragma.backend_challenge.traceability.application.mapper.response.OrderLogResponseMapper;
 import co.com.pragma.backend_challenge.traceability.domain.api.OrderLogServicePort;
-import co.com.pragma.backend_challenge.traceability.domain.model.OrderLog;
+import co.com.pragma.backend_challenge.traceability.domain.model.log.OrderLog;
 import co.com.pragma.backend_challenge.traceability.domain.util.enums.OrderState;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package co.com.pragma.backend_challenge.traceability.domain.model;
+package co.com.pragma.backend_challenge.traceability.domain.model.log;
 
 import java.util.List;
 

@@ -9,4 +9,5 @@ public class FeignConstants {
     }
 
     public static final String AUTH_CLIENT_NAME = "AUTH-CLIENT";
+    public static final String RESTAURANT_CLIENT_NAME = "RESTAURANT-CLIENT";
 }

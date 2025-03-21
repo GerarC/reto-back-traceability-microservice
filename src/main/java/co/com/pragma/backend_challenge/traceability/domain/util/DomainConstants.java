@@ -6,6 +6,7 @@ import co.com.pragma.backend_challenge.traceability.domain.util.annotation.Gener
 public class DomainConstants {
 
     public static final String ORDER_LOG_ALREADY_HAS_AN_ASSIGNED_EMPLOYEE = "OrderLog already has an assignedEmployee";
+    public static final String THIS_ORDER_HAS_NOT_STATE = "This order has not %s state";
 
     private DomainConstants() {
         throw new IllegalStateException("Utility Class");

@@ -31,6 +31,10 @@ server:
 mall:
     user:
         base-url: localhost:8099/mall/v1
+    plaza:
+        base-url: localhost:8098/mall/v1
+
+
 
 allowed-origins:
     http://localhost:3000/,

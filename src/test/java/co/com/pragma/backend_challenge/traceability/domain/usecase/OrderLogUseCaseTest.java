@@ -1,7 +1,8 @@
 package co.com.pragma.backend_challenge.traceability.domain.usecase;
 
 import co.com.pragma.backend_challenge.traceability.domain.exception.*;
-import co.com.pragma.backend_challenge.traceability.domain.model.*;
+import co.com.pragma.backend_challenge.traceability.domain.model.log.OrderLog;
+import co.com.pragma.backend_challenge.traceability.domain.model.log.OrderStateLog;
 import co.com.pragma.backend_challenge.traceability.domain.spi.persitence.OrderLogPersistencePort;
 import co.com.pragma.backend_challenge.traceability.domain.util.enums.OrderState;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +11,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;

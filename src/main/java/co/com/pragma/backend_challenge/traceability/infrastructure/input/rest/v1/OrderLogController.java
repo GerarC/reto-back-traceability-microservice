@@ -1,6 +1,7 @@
 package co.com.pragma.backend_challenge.traceability.infrastructure.input.rest.v1;
 
 import co.com.pragma.backend_challenge.traceability.application.dto.request.NewOrderLogRequest;
+import co.com.pragma.backend_challenge.traceability.application.dto.response.OrderReportResponse;
 import co.com.pragma.backend_challenge.traceability.application.dto.response.ShortOrderLogResponse;
 import co.com.pragma.backend_challenge.traceability.application.handler.OrderLogHandler;
 import co.com.pragma.backend_challenge.traceability.domain.util.enums.OrderState;
@@ -14,6 +15,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/order-logs")
@@ -77,5 +80,6 @@ public class OrderLogController {
             @RequestParam String add) {
         return ResponseEntity.ok(orderLogHandler.addEmployeeToOrder(orderId, add));
     }
+
 
 }

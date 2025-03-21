@@ -1,6 +1,6 @@
 package co.com.pragma.backend_challenge.traceability.domain.api;
 
-import co.com.pragma.backend_challenge.traceability.domain.model.OrderLog;
+import co.com.pragma.backend_challenge.traceability.domain.model.log.OrderLog;
 import co.com.pragma.backend_challenge.traceability.domain.util.enums.OrderState;
 
 public interface OrderLogServicePort {

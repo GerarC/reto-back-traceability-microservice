@@ -5,8 +5,8 @@ import co.com.pragma.backend_challenge.traceability.domain.exception.EntityAlrea
 import co.com.pragma.backend_challenge.traceability.domain.exception.EntityNotFoundException;
 import co.com.pragma.backend_challenge.traceability.domain.exception.OrderLogAlreadyHasThatStateException;
 import co.com.pragma.backend_challenge.traceability.domain.exception.OrderLogAlreadyRegistersAnEmployeeException;
-import co.com.pragma.backend_challenge.traceability.domain.model.OrderLog;
-import co.com.pragma.backend_challenge.traceability.domain.model.OrderStateLog;
+import co.com.pragma.backend_challenge.traceability.domain.model.log.OrderLog;
+import co.com.pragma.backend_challenge.traceability.domain.model.log.OrderStateLog;
 import co.com.pragma.backend_challenge.traceability.domain.spi.persitence.OrderLogPersistencePort;
 import co.com.pragma.backend_challenge.traceability.domain.util.enums.OrderState;
 

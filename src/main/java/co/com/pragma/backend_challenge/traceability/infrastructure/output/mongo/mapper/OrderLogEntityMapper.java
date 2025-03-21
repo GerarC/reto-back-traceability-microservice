@@ -1,6 +1,6 @@
 package co.com.pragma.backend_challenge.traceability.infrastructure.output.mongo.mapper;
 
-import co.com.pragma.backend_challenge.traceability.domain.model.OrderLog;
+import co.com.pragma.backend_challenge.traceability.domain.model.log.OrderLog;
 import co.com.pragma.backend_challenge.traceability.infrastructure.output.mongo.entity.OrderLogEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

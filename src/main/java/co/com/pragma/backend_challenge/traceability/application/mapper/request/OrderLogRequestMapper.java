@@ -1,7 +1,7 @@
 package co.com.pragma.backend_challenge.traceability.application.mapper.request;
 
 import co.com.pragma.backend_challenge.traceability.application.dto.request.NewOrderLogRequest;
-import co.com.pragma.backend_challenge.traceability.domain.model.OrderLog;
+import co.com.pragma.backend_challenge.traceability.domain.model.log.OrderLog;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 
